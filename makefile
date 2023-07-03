@@ -27,16 +27,13 @@ $(BUILD_DIR)/server.o: server/server.cpp server/server.hpp server/route.hpp util
 $(BUILD_DIR)/route.o: server/route.cpp server/route.hpp utils/utilities.hpp utils/response.hpp utils/request.hpp utils/include.hpp
 	$(CC) $(CF) -c server/route.cpp -o $(BUILD_DIR)/route.o
 
-$(BUILD_DIR)/Handler.o: src/Handler.cpp include/Handler.hpp src/User.cpp src/HealthTourism.cpp include/HealthTourism.hpp server/server.hpp utils/utilities.hpp utils/response.hpp utils/request.hpp utils/include.hpp
+$(BUILD_DIR)/Handler.o: src/Handler.cpp include/Handler.hpp include/User.hpp include/HealthTourism.hpp server/server.hpp utils/utilities.hpp utils/response.hpp utils/request.hpp utils/include.hpp include/exceptions.hpp
 	$(CC) $(CF) -c src/Handler.cpp -o $(BUILD_DIR)/Handler.o
 
-$(BUILD_DIR)/main.o: src/main.cpp server/server.hpp utils/utilities.hpp utils/response.hpp utils/request.hpp utils/include.hpp
-	$(CC) $(CF) -c src/main.cpp -o $(BUILD_DIR)/main.o
-
-$(BUILD_DIR)/HealthTourism.o: src/HealthTourism.cpp include/HealthTourism.hpp
+$(BUILD_DIR)/HealthTourism.o: src/HealthTourism.cpp include/HealthTourism.hpp include/Handler.hpp include/Supporter.hpp include/Patient.hpp include/User.hpp include/exceptions.hpp server/server.hpp
 	$(CC) $(CF) -c src/HealthTourism.cpp -o $(BUILD_DIR)/HealthTourism.o
 
-$(BUILD_DIR)/CreditCard.o: src/CreditCard.cpp include/CreditCard.hpp
+$(BUILD_DIR)/CreditCard.o: src/CreditCard.cpp include/CreditCard.hpp include/date.hpp
 	$(CC) $(CF) -c src/CreditCard.cpp -o $(BUILD_DIR)/CreditCard.o
 
 $(BUILD_DIR)/exceptions.o: src/exceptions.cpp include/exceptions.hpp
@@ -45,29 +42,29 @@ $(BUILD_DIR)/exceptions.o: src/exceptions.cpp include/exceptions.hpp
 $(BUILD_DIR)/FinalBill.o: src/FinalBill.cpp include/FinalBill.hpp
 	$(CC) $(CF) -c src/FinalBill.cpp -o $(BUILD_DIR)/FinalBill.o
 
-# $(BUILD_DIR)/Handler.o: src/Handler.cpp include/Handler.hpp src/HealthTourism.cpp include/HealthTourism.hpp
-# 	$(CC) $(CF) -c src/Handler.cpp -o $(BUILD_DIR)/Handler.o
-
 $(BUILD_DIR)/MedicalDocument.o: src/MedicalDocument.cpp include/MedicalDocument.hpp
 	$(CC) $(CF) -c src/MedicalDocument.cpp -o $(BUILD_DIR)/MedicalDocument.o
 
-$(BUILD_DIR)/Patient.o: src/Patient.cpp include/Patient.hpp
+$(BUILD_DIR)/Patient.o: src/Patient.cpp include/Patient.hpp include/User.hpp 
 	$(CC) $(CF) -c src/Patient.cpp -o $(BUILD_DIR)/Patient.o
 
-$(BUILD_DIR)/Payment.o: src/Payment.cpp include/Payment.hpp
+$(BUILD_DIR)/Payment.o: src/Payment.cpp include/Payment.hpp include/date.hpp
 	$(CC) $(CF) -c src/Payment.cpp -o $(BUILD_DIR)/Payment.o
 
-$(BUILD_DIR)/RecordesOfServices.o: src/RecordesOfServices.cpp include/RecordesOfServices.hpp
+$(BUILD_DIR)/RecordesOfServices.o: src/RecordesOfServices.cpp include/RecordesOfServices.hpp include/date.hpp
 	$(CC) $(CF) -c src/RecordesOfServices.cpp -o $(BUILD_DIR)/RecordesOfServices.o
 
-$(BUILD_DIR)/Request.o: src/Request.cpp include/Request.hpp
+$(BUILD_DIR)/Request.o: src/Request.cpp include/Request.hpp include/date.hpp
 	$(CC) $(CF) -c src/Request.cpp -o $(BUILD_DIR)/Request.o
 
-$(BUILD_DIR)/Supporter.o: src/Supporter.cpp include/Supporter.hpp
+$(BUILD_DIR)/Supporter.o: src/Supporter.cpp include/Supporter.hpp include/User.hpp
 	$(CC) $(CF) -c src/Supporter.cpp -o $(BUILD_DIR)/Supporter.o
 
 $(BUILD_DIR)/User.o: src/User.cpp include/User.hpp
 	$(CC) $(CF) -c src/User.cpp -o $(BUILD_DIR)/User.o
+
+$(BUILD_DIR)/main.o: src/main.cpp include/HealthTourism.hpp server/server.hpp utils/utilities.hpp utils/response.hpp utils/request.hpp utils/include.hpp
+	$(CC) $(CF) -c src/main.cpp -o $(BUILD_DIR)/main.o
 
 myserver.out: $(BUILD_DIR)/main.o $(BUILD_DIR)/Handler.o $(BUILD_DIR)/response.o $(BUILD_DIR)/request.o $(BUILD_DIR)/utilities.o $(BUILD_DIR)/server.o $(BUILD_DIR)/route.o $(BUILD_DIR)/template_parser.o $(BUILD_DIR)/HealthTourism.o $(BUILD_DIR)/CreditCard.o $(BUILD_DIR)/exceptions.o $(BUILD_DIR)/FinalBill.o $(BUILD_DIR)/MedicalDocument.o $(BUILD_DIR)/Patient.o $(BUILD_DIR)/Payment.o $(BUILD_DIR)/RecordesOfServices.o $(BUILD_DIR)/Request.o $(BUILD_DIR)/Supporter.o $(BUILD_DIR)/User.o
 	$(CC) $(CF) $(BUILD_DIR)/main.o $(BUILD_DIR)/Handler.o $(BUILD_DIR)/response.o $(BUILD_DIR)/request.o $(BUILD_DIR)/utilities.o $(BUILD_DIR)/server.o $(BUILD_DIR)/route.o $(BUILD_DIR)/template_parser.o $(BUILD_DIR)/HealthTourism.o $(BUILD_DIR)/CreditCard.o $(BUILD_DIR)/exceptions.o $(BUILD_DIR)/FinalBill.o $(BUILD_DIR)/MedicalDocument.o $(BUILD_DIR)/Patient.o $(BUILD_DIR)/Payment.o $(BUILD_DIR)/RecordesOfServices.o $(BUILD_DIR)/Request.o $(BUILD_DIR)/Supporter.o $(BUILD_DIR)/User.o  -o myserver.out
