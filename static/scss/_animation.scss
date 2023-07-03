@@ -1,0 +1,134 @@
+// Solar System
+.solar-system {
+  top: -5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 750px;
+  height: 750px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.orbit {
+  border: 2px solid var(--shade-of-gray-1);
+}
+
+.orbit,
+.orbit + div,
+.orbit + div > div {
+  position: absolute;
+}
+
+.orbit,
+.orbit + div {
+  top: 50%;
+  left: 50%;
+}
+.orbit + div > div {
+  top: 0;
+  left: 50%;
+}
+
+.orbit,
+.orbit + div div,
+#ic-1 {
+  border-radius: 50%;
+}
+
+#ic-1,
+#ic-2,
+#ic-3,
+#ic-4 {
+  background: var(--white-color);
+
+  svg {
+    color: var(--primary-color);
+    width: 50%;
+    height: 50%;
+  }
+}
+
+#ic-1 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 50px;
+  width: 50px;
+  margin-left: -25px;
+  margin-top: -25px;
+  border-radius: 50%;
+}
+
+.ic-1-orbit,
+.ic-1-spin {
+  width: 500px;
+  height: 500px;
+  margin-left: -250px;
+  margin-top: -250px;
+}
+
+#ic-2 {
+  margin-top: -20px;
+  margin-left: -20px;
+  height: 40px;
+  width: 40px;
+}
+.ic-2-orbit,
+.ic-2-spin {
+  margin-top: -185px;
+  margin-left: -185px;
+  width: 370px;
+  height: 370px;
+}
+
+#ic-3 {
+  margin-top: -13.5px;
+  margin-left: -13.5px;
+  height: 25px;
+  width: 25px;
+}
+
+.ic-3-orbit,
+.ic-3-spin {
+  width: 280px;
+  height: 280px;
+  margin-left: -140px;
+  margin-top: -140px;
+}
+
+#ic-4 {
+  margin-top: -16px;
+  margin-left: -16px;
+  height: 32px;
+  width: 32px;
+}
+
+.ic-4-orbit,
+.ic-4-spin {
+  width: 700px;
+  height: 700px;
+  margin-left: -350px;
+  margin-top: -350px;
+}
+
+@keyframes spin-right {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.ic-1-spin {
+  animation: spin-right 36.5s linear infinite;
+}
+.moon-spin {
+  animation: spin-right 3s linear infinite;
+}
+.ic-2-spin {
+  animation: spin-right 22s linear infinite;
+}
+.ic-3-spin {
+  animation: spin-right 8.8s linear infinite;
+}
+.ic-4-spin {
+  animation: spin-right 68.7s linear infinite;
+}
