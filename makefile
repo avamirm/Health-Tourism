@@ -45,11 +45,7 @@ $(BUILD_DIR)/FinalBill.o: src/FinalBill.cpp include/FinalBill.hpp
 $(BUILD_DIR)/MedicalDocument.o: src/MedicalDocument.cpp include/MedicalDocument.hpp
 	$(CC) $(CF) -c src/MedicalDocument.cpp -o $(BUILD_DIR)/MedicalDocument.o
 
-<<<<<<< HEAD
-$(BUILD_DIR)/Patient.o: src/Patient.cpp include/Patient.hpp include/User.hpp 
-=======
 $(BUILD_DIR)/Patient.o: src/Patient.cpp include/Patient.hpp include/User.hpp  include/CreditCard.hpp include/exceptions.hpp
->>>>>>> d7c191b (completed classes)
 	$(CC) $(CF) -c src/Patient.cpp -o $(BUILD_DIR)/Patient.o
 
 $(BUILD_DIR)/Payment.o: src/Payment.cpp include/Payment.hpp include/date.hpp
@@ -58,13 +54,8 @@ $(BUILD_DIR)/Payment.o: src/Payment.cpp include/Payment.hpp include/date.hpp
 $(BUILD_DIR)/RecordesOfServices.o: src/RecordesOfServices.cpp include/RecordesOfServices.hpp include/date.hpp
 	$(CC) $(CF) -c src/RecordesOfServices.cpp -o $(BUILD_DIR)/RecordesOfServices.o
 
-<<<<<<< HEAD
-$(BUILD_DIR)/Request.o: src/Request.cpp include/Request.hpp include/date.hpp
-	$(CC) $(CF) -c src/Request.cpp -o $(BUILD_DIR)/Request.o
-=======
 $(BUILD_DIR)/Requests.o: src/Requests.cpp include/Requests.hpp include/date.hpp include/Supporter.hpp
 	$(CC) $(CF) -c src/Requests.cpp -o $(BUILD_DIR)/Requests.o
->>>>>>> d7c191b (completed classes)
 
 $(BUILD_DIR)/Supporter.o: src/Supporter.cpp include/Supporter.hpp include/User.hpp
 	$(CC) $(CF) -c src/Supporter.cpp -o $(BUILD_DIR)/Supporter.o
@@ -72,19 +63,11 @@ $(BUILD_DIR)/Supporter.o: src/Supporter.cpp include/Supporter.hpp include/User.h
 $(BUILD_DIR)/User.o: src/User.cpp include/User.hpp include/Requests.hpp
 	$(CC) $(CF) -c src/User.cpp -o $(BUILD_DIR)/User.o
 
-<<<<<<< HEAD
-$(BUILD_DIR)/main.o: src/main.cpp include/HealthTourism.hpp server/server.hpp utils/utilities.hpp utils/response.hpp utils/request.hpp utils/include.hpp
-	$(CC) $(CF) -c src/main.cpp -o $(BUILD_DIR)/main.o
-
-myserver.out: $(BUILD_DIR)/main.o $(BUILD_DIR)/Handler.o $(BUILD_DIR)/response.o $(BUILD_DIR)/request.o $(BUILD_DIR)/utilities.o $(BUILD_DIR)/server.o $(BUILD_DIR)/route.o $(BUILD_DIR)/template_parser.o $(BUILD_DIR)/HealthTourism.o $(BUILD_DIR)/CreditCard.o $(BUILD_DIR)/exceptions.o $(BUILD_DIR)/FinalBill.o $(BUILD_DIR)/MedicalDocument.o $(BUILD_DIR)/Patient.o $(BUILD_DIR)/Payment.o $(BUILD_DIR)/RecordesOfServices.o $(BUILD_DIR)/Request.o $(BUILD_DIR)/Supporter.o $(BUILD_DIR)/User.o
-	$(CC) $(CF) $(BUILD_DIR)/main.o $(BUILD_DIR)/Handler.o $(BUILD_DIR)/response.o $(BUILD_DIR)/request.o $(BUILD_DIR)/utilities.o $(BUILD_DIR)/server.o $(BUILD_DIR)/route.o $(BUILD_DIR)/template_parser.o $(BUILD_DIR)/HealthTourism.o $(BUILD_DIR)/CreditCard.o $(BUILD_DIR)/exceptions.o $(BUILD_DIR)/FinalBill.o $(BUILD_DIR)/MedicalDocument.o $(BUILD_DIR)/Patient.o $(BUILD_DIR)/Payment.o $(BUILD_DIR)/RecordesOfServices.o $(BUILD_DIR)/Request.o $(BUILD_DIR)/Supporter.o $(BUILD_DIR)/User.o  -o myserver.out
-=======
 $(BUILD_DIR)/main.o: src/main.cpp include/HealthTourism.hpp include/Handler.hpp include/Supporter.hpp include/Patient.hpp include/User.hpp include/exceptions.hpp server/server.hpp
 	$(CC) $(CF) -c src/main.cpp -o $(BUILD_DIR)/main.o
 
 myserver.out: $(BUILD_DIR)/main.o $(BUILD_DIR)/Handler.o $(BUILD_DIR)/response.o $(BUILD_DIR)/request.o $(BUILD_DIR)/utilities.o $(BUILD_DIR)/server.o $(BUILD_DIR)/route.o $(BUILD_DIR)/template_parser.o $(BUILD_DIR)/HealthTourism.o $(BUILD_DIR)/CreditCard.o $(BUILD_DIR)/exceptions.o $(BUILD_DIR)/FinalBill.o $(BUILD_DIR)/MedicalDocument.o $(BUILD_DIR)/Patient.o $(BUILD_DIR)/Payment.o $(BUILD_DIR)/RecordesOfServices.o $(BUILD_DIR)/Requests.o $(BUILD_DIR)/Supporter.o $(BUILD_DIR)/User.o
 	$(CC) $(CF) $(BUILD_DIR)/main.o $(BUILD_DIR)/Handler.o $(BUILD_DIR)/response.o $(BUILD_DIR)/request.o $(BUILD_DIR)/utilities.o $(BUILD_DIR)/server.o $(BUILD_DIR)/route.o $(BUILD_DIR)/template_parser.o $(BUILD_DIR)/HealthTourism.o $(BUILD_DIR)/CreditCard.o $(BUILD_DIR)/exceptions.o $(BUILD_DIR)/FinalBill.o $(BUILD_DIR)/MedicalDocument.o $(BUILD_DIR)/Patient.o $(BUILD_DIR)/Payment.o $(BUILD_DIR)/RecordesOfServices.o $(BUILD_DIR)/Requests.o $(BUILD_DIR)/Supporter.o $(BUILD_DIR)/User.o  -o myserver.out
->>>>>>> d7c191b (completed classes)
 
 .PHONY: clean
 clean:
