@@ -1,0 +1,2 @@
+cost=220$
+package_id=package7

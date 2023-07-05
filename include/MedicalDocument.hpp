@@ -5,9 +5,9 @@
 
 class MedicalDocument {
 public:
-
+    MedicalDocument(std::string _name, std::string _deseases, bool _is_confirmed);
 private:
-    std::string document_type;
+    std::string name;
     std::string deseases;
     bool is_confirmed;
     // data: JGP

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/WeCare.ico" type="image/x-icon" />
+
+    <title>We.Care</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link rel="stylesheet" href="formalize.css" />
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <form action="Package" method="POST">
+        <section class="docs container my-14">
+          <div class="docs__heading text-center">
+            <h3 class="steps-main__title text-4xl">Choose Packages</h3>
+            <p class="text-sm fc-gray font-semi-bold">
+              We.care gives you the tools and information you need to
+            </p>
+          </div>
+          <div class="docs__main">
+            <div class="docs-item">
+              <div class="doc__img">
+                <img src="doc-1.png" alt="" />
+              </div>
+              <div class="doc__details text-center">
+                <h5 class="font-semi-bold text-base">Dr. Leslie Alexander</h5>
+                <p class="text-sm fc-gray">Dental Surgery</p>
+                <p class="text-sm fc-gray">1300$</p>
+                <input
+                  type="radio"
+                  id="package1"
+                  name="chosen_package"
+                  value="package1"
+                />
+                <input type="hidden" id="cost1" name="cost" value="1300" />
+                <label for="html">package 1</label><br />
+              </div>
+            </div>
+
+            <div class="docs-item">
+              <div class="doc__img">
+                <img src="doc-2.png" alt="" />
+              </div>
+              <div class="doc__details text-center">
+                <h5 class="font-semi-bold text-base">Dr. Kathryn Murphy</h5>
+                <p class="text-sm fc-gray">Pediatric Medicine</p>
+                <p class="text-sm fc-gray">800$</p>
+                <input
+                  type="radio"
+                  id="package2"
+                  name="chosen_package"
+                  value="package2"
+                />
+                <input type="hidden" id="cost2" name="cost" value="800" />
+                <label for="html">package 2</label><br />
+              </div>
+            </div>
+            <div class="docs-item">
+              <div class="doc__img">
+                <img src="doc-3.png" alt="" />
+              </div>
+              <div class="doc__details text-center">
+                <h5 class="font-semi-bold text-base">Dr. Robert Fox</h5>
+                <p class="text-sm fc-gray">Gastroenterologist</p>
+                <p class="text-sm fc-gray">650$</p>
+                <input
+                  type="radio"
+                  id="package3"
+                  name="chosen_package"
+                  value="package3"
+                />
+                <input type="hidden" id="cost3" name="cost" value="650" />
+                <label for="html">package 3</label><br />
+              </div>
+            </div>
+            <div class="docs-item">
+              <div class="doc__img">
+                <img src="doc-4.png" alt="" />
+              </div>
+              <div class="doc__details text-center">
+                <h5 class="font-semi-bold text-base">Dr. Esther Howard</h5>
+                <p class="text-sm fc-gray">Thoracic Surgeon</p>
+                <p class="text-sm fc-gray">1600$</p>
+                <input
+                  type="radio"
+                  id="package4"
+                  name="chosen_package"
+                  value="package4"
+                />
+                <input type="hidden" id="cost4" name="cost" value="1600" />
+                <label for="html">package 4</label><br />
+              </div>
+            </div>
+            <div class="docs-item">
+              <div class="doc__img">
+                <img src="doc-5.png" alt="" />
+              </div>
+              <div class="doc__details text-center">
+                <h5 class="font-semi-bold text-base">Dr. Albert Flores</h5>
+                <p class="text-sm fc-gray">Intern Neurologist</p>
+                <p class="text-sm fc-gray">900$</p>
+                <input
+                  type="radio"
+                  id="package5"
+                  name="chosen_package"
+                  value="package5"
+                />
+                <input type="hidden" id="cost5" name="cost" value="900" />
+                <label for="html">package 5</label><br />
+              </div>
+            </div>
+            <div class="docs-item">
+              <div class="doc__img">
+                <img src="doc-6.png" alt="" />
+              </div>
+              <div class="doc__details text-center">
+                <h5 class="font-semi-bold text-base">Dr. Jerome Bell</h5>
+                <p class="text-sm fc-gray">Obstetrician and Gynecologist</p>
+                <p class="text-sm fc-gray">750$</p>
+                <input
+                  type="radio"
+                  id="package6"
+                  name="chosen_package"
+                  value="package6"
+                />
+                <input type="hidden" id="cost6" name="cost" value="750" />
+                <label for="html">package 6</label><br />
+              </div>
+            </div>
+            <div class="docs-item">
+              <div class="doc__img">
+                <img src="doc-7.png" alt="" />
+              </div>
+              <div class="doc__details text-center">
+                <h5 class="font-semi-bold text-base">Dr. Arlene McCoy</h5>
+                <p class="text-sm fc-gray">Cardiologist</p>
+                <p class="text-sm fc-gray">400$</p>
+                <input
+                  type="radio"
+                  id="package7"
+                  name="chosen_package"
+                  value="package7"
+                />
+                <input type="hidden" id="cost7" name="cost" value="400" />
+                <label for="html">package 7</label><br />
+              </div>
+            </div>
+            <div class="docs-item">
+              <div class="doc__img">
+                <img src="doc-8.png" alt="" />
+              </div>
+              <div class="doc__details text-center">
+                <h5 class="font-semi-bold text-base">Dr. Jeremy Wilson</h5>
+                <p class="text-sm fc-gray">Intern Dermatologist</p>
+                <p class="text-sm fc-gray">1100$</p>
+                <input
+                  type="radio"
+                  id="package8"
+                  name="chosen_package"
+                  value="package8"
+                />
+                <input type="hidden" id="cost8" name="cost" value="1100" />
+                <label for="html">package 8</label><br />
+              </div>
+            </div>
+          </div>
+          <div class="btn btn--primary">
+            <input type="Submit" value="Add Package" />
+          </div>
+        </section>
+      </form>
+    </div>
+  </body>
+</html>

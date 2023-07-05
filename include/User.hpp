@@ -1,7 +1,9 @@
 #ifndef USER_HPP
 #define USER_HPP
 
-#include "string"
+#include <string>
+#include "../include/Requests.hpp"
+// class Requests;
 
 class User
 {
@@ -12,6 +14,7 @@ public:
     std::string get_password();
     std::string get_email();
     virtual std::string get_type() = 0;
+    virtual std::string get_id() = 0;
 
 protected:
     std::string username;

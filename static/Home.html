@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="assets/WeCare.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="WeCare.ico" type="image/x-icon" />
 
     <title>We.Care</title>
 
@@ -20,8 +20,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
 
-    <link rel="stylesheet" href="css/formalize.css" />
-    <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="stylesheet" href="formalize.css" />
+    <link rel="stylesheet" href="home.css" />
   </head>
   <body>
     <div class="wrapper">
@@ -31,7 +31,7 @@
             <a href="#">
               <img
                 class="header__logo"
-                src="assets/WeCare-Logo.png"
+                src="WeCare-Logo.png"
                 alt="logo"
               />
             </a>
@@ -47,8 +47,9 @@
               </li>
             </ul>
             <div class="nav__btns z-9">
-              <a href="/static/Login.html" class="btn btn--secondary">Log in</a>
-              <a href="/static/Signup" class="btn btn--primary">Sign up</a>
+              <a href="/Logout" class="btn btn--secondary">Log out</a>
+              <a href="/Login" class="btn btn--secondary">Log in</a>
+              <a href="/Signup" class="btn btn--primary">Sign up</a>
               <a id="theme-color-toggler-2" class="btn btn--primary pointer">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +73,7 @@
             <a href="#">
               <img
                 class="header__logo"
-                src="assets/WeCare-Logo.png"
+                src="WeCare-Logo.png"
                 alt="logo"
               />
             </a>
@@ -209,14 +210,10 @@
               </li>
 
               <div class="nav__btns">
-                <a
-                  href="/static/Login.html"
-                  class="btn btn--secondary text-center"
+                <a href="/Login" class="btn btn--secondary text-center"
                   >Log in</a
                 >
-                <a
-                  href="/static/Signup.html"
-                  class="btn btn--primary text-center"
+                <a href="/Signup" class="btn btn--primary text-center"
                   >Sign up</a
                 >
               </div>
@@ -272,7 +269,7 @@
             <div class="hero__img pos-relative">
               <img
                 class="hero-img pos-relative"
-                src="assets/imgs/header-doc-img.png"
+                src="header-doc-img.png"
                 alt=""
               />
 
@@ -372,10 +369,129 @@
           </div>
         </div>
       </header>
+      <section class="why my-14">
+        <div class="container">
+          <div class="why__img">
+            <img
+              data-animate="animate__pulse"
+              id="why-img-1"
+              class="why-img animate__animated"
+              src="why-doc-img.png"
+              alt=""
+            />
+            <img
+              data-animate="animate__rotateInDownLeft"
+              id="why-img-2"
+              class="why-img-2 shadow-sm animate__animated"
+              src="why-doc-img-2.svg"
+              alt=""
+            />
+          </div>
+          <div class="why__main">
+            <h3 class="steps-main__title text-4xl">Why you choose We.care</h3>
+            <p class="text-sm fc-gray font-semi-bold">
+              We.care gives you the tools and information you need to
+            </p>
+            <ul class="why__list text-base font-semi-bold">
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <p>24/7 access - reach out whenever you need.</p>
+              </li>
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              </li>
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <p>Lorem ipsum dolor sit amet.</p>
+              </li>
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+              </li>
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Nesciunt?
+                </p>
+              </li>
+            </ul>
+            <a href="/Package" class="btn btn--primary"
+              >Choosing Package</a
+            >
+          </div>
+        </div>
+      </section>
       <footer class="footer">
         <div class="container">
           <div class="footer__col footer__col-1">
-            <img class="footer__logo" src="assets/WeCare-Logo.png" alt="" />
+            <img class="footer__logo" src="WeCare-Logo.png" alt="" />
             <div class="social-icons">
               <svg
                 role="img"
