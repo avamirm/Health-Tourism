@@ -33,6 +33,11 @@ std::string Supporter::get_address()
     return address;
 }
 
+std::string Supporter::get_password()
+{
+    return password;
+}
+
 bool Supporter::is_assigned()
 {
     return assigned;
