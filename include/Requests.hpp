@@ -23,6 +23,7 @@ public:
     void assigned_supporter(Supporter *_supporter);
     void set_date(std::string _date);
     void set_file(std::string file);
+    bool operator == (const Requests &other);
     std::string get_package_id();
     std::string get_package_status();
     std::string get_package_date();

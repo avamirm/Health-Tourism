@@ -66,8 +66,11 @@ $(BUILD_DIR)/User.o: src/User.cpp include/User.hpp include/Requests.hpp
 $(BUILD_DIR)/main.o: src/main.cpp include/HealthTourism.hpp include/Handler.hpp include/Supporter.hpp include/Patient.hpp include/User.hpp include/exceptions.hpp server/server.hpp
 	$(CC) $(CF) -c src/main.cpp -o $(BUILD_DIR)/main.o
 
-myserver.out: $(BUILD_DIR)/main.o $(BUILD_DIR)/Handler.o $(BUILD_DIR)/response.o $(BUILD_DIR)/request.o $(BUILD_DIR)/utilities.o $(BUILD_DIR)/server.o $(BUILD_DIR)/route.o $(BUILD_DIR)/template_parser.o $(BUILD_DIR)/HealthTourism.o $(BUILD_DIR)/CreditCard.o $(BUILD_DIR)/exceptions.o $(BUILD_DIR)/FinalBill.o $(BUILD_DIR)/MedicalDocument.o $(BUILD_DIR)/Patient.o $(BUILD_DIR)/Payment.o $(BUILD_DIR)/RecordesOfServices.o $(BUILD_DIR)/Requests.o $(BUILD_DIR)/Supporter.o $(BUILD_DIR)/User.o
-	$(CC) $(CF) $(BUILD_DIR)/main.o $(BUILD_DIR)/Handler.o $(BUILD_DIR)/response.o $(BUILD_DIR)/request.o $(BUILD_DIR)/utilities.o $(BUILD_DIR)/server.o $(BUILD_DIR)/route.o $(BUILD_DIR)/template_parser.o $(BUILD_DIR)/HealthTourism.o $(BUILD_DIR)/CreditCard.o $(BUILD_DIR)/exceptions.o $(BUILD_DIR)/FinalBill.o $(BUILD_DIR)/MedicalDocument.o $(BUILD_DIR)/Patient.o $(BUILD_DIR)/Payment.o $(BUILD_DIR)/RecordesOfServices.o $(BUILD_DIR)/Requests.o $(BUILD_DIR)/Supporter.o $(BUILD_DIR)/User.o  -o myserver.out
+$(BUILD_DIR)/Test.o: src/Test.cpp include/Test.hpp include/HealthTourism.hpp include/Handler.hpp include/Supporter.hpp include/Patient.hpp include/User.hpp include/exceptions.hpp include/Requests.hpp server/server.hpp
+	$(CC) $(CF) -c src/Test.cpp -o $(BUILD_DIR)/Test.o
+	
+myserver.out: $(BUILD_DIR)/main.o $(BUILD_DIR)/Handler.o $(BUILD_DIR)/response.o $(BUILD_DIR)/request.o $(BUILD_DIR)/utilities.o $(BUILD_DIR)/server.o $(BUILD_DIR)/route.o $(BUILD_DIR)/template_parser.o $(BUILD_DIR)/HealthTourism.o $(BUILD_DIR)/CreditCard.o $(BUILD_DIR)/exceptions.o $(BUILD_DIR)/FinalBill.o $(BUILD_DIR)/MedicalDocument.o $(BUILD_DIR)/Patient.o $(BUILD_DIR)/Payment.o $(BUILD_DIR)/RecordesOfServices.o $(BUILD_DIR)/Requests.o $(BUILD_DIR)/Supporter.o $(BUILD_DIR)/User.o $(BUILD_DIR)/Test.o
+	$(CC) $(CF) $(BUILD_DIR)/main.o $(BUILD_DIR)/Handler.o $(BUILD_DIR)/response.o $(BUILD_DIR)/request.o $(BUILD_DIR)/utilities.o $(BUILD_DIR)/server.o $(BUILD_DIR)/route.o $(BUILD_DIR)/template_parser.o $(BUILD_DIR)/HealthTourism.o $(BUILD_DIR)/CreditCard.o $(BUILD_DIR)/exceptions.o $(BUILD_DIR)/FinalBill.o $(BUILD_DIR)/MedicalDocument.o $(BUILD_DIR)/Patient.o $(BUILD_DIR)/Payment.o $(BUILD_DIR)/RecordesOfServices.o $(BUILD_DIR)/Requests.o $(BUILD_DIR)/Supporter.o $(BUILD_DIR)/User.o  $(BUILD_DIR)/Test.o -o myserver.out
 
 .PHONY: clean
 clean:

@@ -7,12 +7,18 @@ Requests::Requests(std::string _name, std::string _status, std::string _date, st
     status = _status;
     date = _date;
     estimated_cost = _estimated_cost;
-    std::cout << "___est cost::: " << _estimated_cost << "est cost:: --- " << estimated_cost << std::endl;
     supporter = _supporter;
 }
 
 Requests::~Requests()
 {
+}
+
+bool Requests::operator == (const Requests &other)
+{
+   if (this->estimated_cost == other.estimated_cost && this->name == other.name && this->status == other.status)
+      return true;
+  return false;
 }
 
 void Requests::set_date(std::string _date)
