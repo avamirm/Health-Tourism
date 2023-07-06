@@ -41,6 +41,16 @@ std::string Requests::get_package_id()
     return name;
 }
 
+std::string Requests::get_package_status()
+{
+    return status;
+}
+
+std::string Requests::get_package_date()
+{
+    return date;
+}
+
 std::string Requests::get_supporter_name()
 {
     std::string name = supporter->get_name();
