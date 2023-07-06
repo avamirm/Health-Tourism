@@ -52,7 +52,9 @@ void HealthTourism::run()
     server.get("/success-icon.png", new ShowImage("static/assets/success-icon.png"));
     server.get("/SuccessSendingInfo", new SendingInfoHandler("static/SuccessSendingInfo.html", this));
     // server.get("/SuccessSendingInfo", new ShowPage("static/SuccessSendingInfo.html"));
+    File.open("data.txt");
     server.run();
+    File.close();
 }
 
 User *HealthTourism::find_user_by_id(std::string id)
@@ -107,6 +109,13 @@ void HealthTourism::delete_request(std::string id){
     static_cast<Patient *>(user)->delete_request();
 }
 
+void HealthTourism::write_file(User* user, Supporter* supporter, Requests* req){
+    File << "Package id: " << req->get_package_id() << "\nPackage status: " << req->get_package_status() << "\nPackage date: " << req->get_package_date() << "\nPackage estimated cost: " << req->get_estimated_cost();
+    File << "\nPatient information:\n" << "\tName: " << user->get_username() << "\n\tEmail: " << user->get_email();
+    File  << "\nSupporter information:\n" << "\tName: " << supporter->get_name() << "\n\tEmail: " << supporter->get_email() << "\n\tAddress: " << supporter->get_address();
+    File << "\n\n------------------------------------------------\n" << std::endl;
+}
+
 void HealthTourism::set_supporter(std::string id)
 {
     User *user = find_user_by_id(id);
@@ -119,6 +128,7 @@ void HealthTourism::set_supporter(std::string id)
             Requests *req = static_cast<Patient *>(user)->get_request();
             req->change_status("Waiting For Supporter");
             req->assigned_supporter(supporter);
+            write_file(user, supporter,req);
             return;
         }
     }
