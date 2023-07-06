@@ -24,6 +24,8 @@ public:
     void set_date(std::string _date);
     void set_file(std::string file);
     std::string get_package_id();
+    std::string get_package_status();
+    std::string get_package_date();
 
 private:
     std::string name;
