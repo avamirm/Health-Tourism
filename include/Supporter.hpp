@@ -13,6 +13,7 @@ public:
     bool get_status() { return assigned;}
     std::string get_name();
     std::string get_address();
+    std::string get_password();
     std::string get_type() override;
     std::string get_id() override;
     bool is_assigned();
