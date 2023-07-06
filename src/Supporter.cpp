@@ -28,6 +28,11 @@ std::string Supporter::get_name()
     return username;
 }
 
+std::string Supporter::get_address()
+{
+    return address;
+}
+
 bool Supporter::is_assigned()
 {
     return assigned;
