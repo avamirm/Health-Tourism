@@ -10,6 +10,7 @@
 
 #include <vector>
 #include <iostream>
+#include <fstream>
 #include <string>
 
 class HealthTourism
@@ -27,11 +28,13 @@ public:
     void set_supporter(std::string id);
     std::vector<std::string> get_names_info(std::string id);
     void check_for_available_supporter();
+    void write_file(User* user, Supporter* supporter, Requests* req);
     // void add_package(Patient *pt, std::string name, std::string cost);
 
 private:
     std::vector<User *> users;
     std::vector<Supporter *> supporters;
+    std::ofstream File;
     int patient_id = 1;
     int supporter_id = 1;
 };
