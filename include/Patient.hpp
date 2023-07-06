@@ -18,6 +18,7 @@ public:
     std::string get_supporter_name();
     bool is_pending();
     void add_request(std::string chosen_package, std::string cost);
+    void delete_request();
     void set_request_date(std::string date);
     void set_request_file(std::string file);
     void set_request_card_number(std::string card_number, std::string expiry_date, std::string cvv);

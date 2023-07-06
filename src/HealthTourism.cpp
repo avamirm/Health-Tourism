@@ -39,6 +39,7 @@ void HealthTourism::run()
     server.get("/Error", new ShowPage("static/Error.html"));
     server.get("/Package", new ShowPage("static/Package.html"));
     server.post("/Package", new AddPackageHandler(this));
+    server.get("/Packageback", new DeleteRequestHandler(this));
     // server.get("/", new ShowPage("static/PackageForm.html"));
     server.get("/AddRequest", new ShowPage("static/PackageForm.html"));
     server.get("/PackageForm.css", new ShowPage("static/PackageForm.css"));
@@ -99,6 +100,11 @@ User *HealthTourism::login(std::string username, std::string password)
     if (user->get_password() != password)
         throw IncorrectPassword();
     return user;
+}
+
+void HealthTourism::delete_request(std::string id){
+    User *user = find_user_by_id(id);
+    static_cast<Patient *>(user)->delete_request();
 }
 
 void HealthTourism::set_supporter(std::string id)

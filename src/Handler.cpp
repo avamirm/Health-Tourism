@@ -92,6 +92,15 @@ Response *AddPackageHandler::callback(Request *req)
     return res;
 }
 
+Response *DeleteRequestHandler::callback(Request *req)
+{
+    Response *res = new Response;
+    std::string id = req->getSessionId();
+    health_tourism->delete_request(id);
+    res = Response::redirect("/Package");
+    return res;
+}
+
 Response *AddRequestHandler::callback(Request *req)
 {
     Response *res = new Response;

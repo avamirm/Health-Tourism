@@ -62,6 +62,16 @@ private:
     HealthTourism *health_tourism;
 };
 
+class DeleteRequestHandler : public RequestHandler
+{
+public:
+    DeleteRequestHandler(HealthTourism *_ht) : health_tourism(_ht){};
+    Response *callback(Request *);
+
+private:
+    HealthTourism *health_tourism;
+};
+
 class AddRequestHandler : public RequestHandler
 {
 public:
@@ -77,6 +87,7 @@ class PaymentInfoHandler : public TemplateHandler
 public:
     PaymentInfoHandler(const std::string &filePath, HealthTourism *_ht) : TemplateHandler(filePath), health_tourism(_ht){};
     std::map<std::string, std::string> handle(Request *req) override;
+
 private:
     HealthTourism *health_tourism;
 };

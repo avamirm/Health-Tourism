@@ -33,7 +33,6 @@ std::string Requests::get_status()
 
 int Requests::get_estimated_cost()
 {
-    std::cout << "COSTTTTTT: " << estimated_cost << std::endl;
     return std::stoi(estimated_cost) * 0.2;
 }
 
@@ -45,7 +44,6 @@ std::string Requests::get_package_id()
 std::string Requests::get_supporter_name()
 {
     std::string name = supporter->get_name();
-    std::cout << "SUP nameeee" << name << std::endl;
     return name;
 }
 
@@ -58,7 +56,5 @@ void Requests::assigned_supporter(Supporter *_supporter)
 {
     supporter = _supporter;
     supporter->change_status();
-    std::cout << "sttatis sup: " << supporter->get_status() << std::endl;
-    std::cout << "name of supporter: " << supporter->get_name() << std::endl;
     change_status("Pending");
 }

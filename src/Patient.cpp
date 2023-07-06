@@ -34,13 +34,18 @@ bool Patient::is_pending()
 
 void Patient::add_request(std::string chosen_package, std::string cost)
 {
-    std::cout << "addREq cost-->" << cost << std::endl;
     Requests *req = new Requests(chosen_package, "Pending", "", cost, nullptr);
     requests.push_back(req);
 }
 
+void Patient::delete_request()
+{
+    requests.pop_back();
+}
+
 void Patient::set_request_date(std::string date)
 {
+    
     requests[requests.size() - 1]->set_date(date);
 }
 
@@ -56,12 +61,6 @@ void Patient::set_request_card_number(std::string card_number, std::string expir
         throw IncorrectInput();
     credit_cards.push_back(cc);
 }
-
-// void Patient::set_supporter(Supporter *supporter)
-// {
-//     requests[requests.size() - 1]->change_status("Waiting For Supporter");
-//     requests[requests.size() - 1]->assigned_supporter(supporter);
-// }
 
 int Patient::get_request_cost()
 {

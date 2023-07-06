@@ -23,6 +23,7 @@ public:
     User *find_user(std::string username);
     User *find_user_by_id(std::string id);
     User *login(std::string username, std::string password);
+    void delete_request(std::string id);
     void set_supporter(std::string id);
     std::vector<std::string> get_names_info(std::string id);
     void check_for_available_supporter();

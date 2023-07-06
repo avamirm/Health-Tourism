@@ -33,6 +33,22 @@
         max-width: 400px;
         margin: 0 auto;
       }
+
+      .back-button {
+        display: inline-block;
+        background-color: #052c67a0;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .back-button:hover {
+        background-color: #052c67;
+      }
     </style>
     <script>
       function startTimer(duration, display) {
@@ -62,6 +78,10 @@
         var display = document.getElementById("timer");
         startTimer(duration, display);
       };
+
+      function goBack() {
+        window.history.back();
+      }
     </script>
   </head>
   <body>
@@ -72,6 +92,11 @@
     <div class="info">
       <p>Package ID: <% cout << context["package_id"];%></p>
       <p>Estimated Cost: <% cout<< context["cost"];%></p>
+    </div>
+    <div>
+      <a href="Packageback" onclick="window.history.back()" class="back-button"
+        >Back</a
+      >
     </div>
   </body>
 </html>
