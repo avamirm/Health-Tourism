@@ -52,8 +52,66 @@ void HealthTourism::run()
     server.get("/success-icon.png", new ShowImage("static/assets/success-icon.png"));
     server.get("/SuccessSendingInfo", new SendingInfoHandler("static/SuccessSendingInfo.html", this));
     // server.get("/SuccessSendingInfo", new ShowPage("static/SuccessSendingInfo.html"));
-    File.open("data.txt");
+    
+    read_from_file();
+    File.open("data.txt", std::fstream::app | std::fstream::ate);
     server.run();
+    File.close();
+}
+
+void HealthTourism::read_from_file(){
+    std::string myline;
+    std::string name, email, address, password, id, status, date, cost;
+    int pos_name , pos_email, pos_pass, pos_address, pos_id, pos_date, pos_cost;
+    User *user;
+    User* supporter;
+    Requests *req;
+    File.open("data.txt", std::ios::out | std::ios::in);
+
+    while(getline(File, myline)){
+        switch (myline[0])
+        {
+        case 'P':
+            getline(File, name);
+            getline(File, email);
+            getline(File, password);
+            pos_name = name.find(":");
+            pos_email = email.find(":");
+            pos_pass = password.find(":");
+            user = signup(name.substr(pos_name+2),password.substr(pos_pass+2), email.substr(pos_email+2), "");
+            break;
+        
+        case 'S':
+            getline(File, name);
+            getline(File, email);
+            getline(File, address);
+            getline(File, password);
+            pos_name = name.find(":");
+            pos_email = email.find(":");
+            pos_pass = password.find(":");
+            pos_address = address.find(":");
+            supporter = signup(name.substr(pos_name+2),password.substr(pos_pass+2), email.substr(pos_email+2), address.substr(pos_address+2));
+            req = static_cast<Patient *>(user)->get_request();
+            req->assigned_supporter(dynamic_cast<Supporter *>(supporter));
+            break;
+        
+        case 'T':
+            getline(File, id);
+            getline(File, status);
+            getline(File, date);
+            getline(File, cost);
+            pos_id = id.find(":");
+            pos_date = date.find(":");
+            pos_cost = cost.find(":");
+            dynamic_cast<Patient *>(user)->add_request(id.substr(pos_id+2), cost.substr(pos_cost+2));
+            dynamic_cast<Patient *>(user)->set_request_date(date.substr(pos_date+2));
+            break;
+
+        default:
+            std::cout << "" << std::endl;
+            break;
+        }
+    }
     File.close();
 }
 
@@ -110,9 +168,9 @@ void HealthTourism::delete_request(std::string id){
 }
 
 void HealthTourism::write_file(User* user, Supporter* supporter, Requests* req){
-    File << "Package id: " << req->get_package_id() << "\nPackage status: " << req->get_package_status() << "\nPackage date: " << req->get_package_date() << "\nPackage estimated cost: " << req->get_estimated_cost();
-    File << "\nPatient information:\n" << "\tName: " << user->get_username() << "\n\tEmail: " << user->get_email();
-    File  << "\nSupporter information:\n" << "\tName: " << supporter->get_name() << "\n\tEmail: " << supporter->get_email() << "\n\tAddress: " << supporter->get_address();
+    File << "Patient information:\n" << "\tName: " << user->get_username() << "\n\tEmail: " << user->get_email() << "\n\tpassword: " << user->get_password();
+    File << "\nTreatment Package information:" << "\n\tid: " << req->get_package_id() << "\n\tstatus: " << req->get_package_status() << "\n\tdate: " << req->get_package_date() << "\n\testimated cost: " << req->get_estimated_cost();
+    File  << "\nSupporter information:\n" << "\tName: " << supporter->get_name() << "\n\tEmail: " << supporter->get_email() << "\n\tAddress: " << supporter->get_address() << "\n\tpassword: " << supporter->get_password();
     File << "\n\n------------------------------------------------\n" << std::endl;
 }
 
